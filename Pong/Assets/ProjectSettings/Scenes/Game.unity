@@ -133,9 +133,11 @@ GameObject:
   - component: {fileID: 79757898}
   - component: {fileID: 79757899}
   - component: {fileID: 79757900}
+  - component: {fileID: 79757901}
+  - component: {fileID: 79757902}
   m_Layer: 0
   m_Name: GoalRight
-  m_TagString: Untagged
+  m_TagString: GoalRight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -252,6 +254,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &79757901
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79757897}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0b5462a09280da14a8eb3b2fb0787de9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &79757902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79757897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c5b9e3e5e20e1f45b8895006c9e9236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &122925809
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,6 +713,38 @@ Transform:
   - {fileID: 1263344132}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &492555158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 492555159}
+  m_Layer: 0
+  m_Name: ===[Game Manager]===
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &492555159
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492555158}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1851468, y: -0.11203615, z: -0.07894009}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1823100496}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &687410756
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,6 +986,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialVelocity: 4
   velocityMultiplier: 1.1
+  goalRight: {fileID: 79757897}
+  goalRight_Anim: {fileID: 79757901}
+  goalLeft: {fileID: 922171884}
+  goalLeft_Anim: {fileID: 922171889}
 --- !u!1 &800270473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,6 +1174,8 @@ GameObject:
   - component: {fileID: 922171885}
   - component: {fileID: 922171886}
   - component: {fileID: 922171887}
+  - component: {fileID: 922171889}
+  - component: {fileID: 922171888}
   m_Layer: 0
   m_Name: GoalLeft
   m_TagString: Untagged
@@ -1222,6 +1295,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &922171888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922171884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c5b9e3e5e20e1f45b8895006c9e9236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &922171889
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922171884}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e8e67534a33e73449b787ffc7fc9786c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1082006989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,6 +1728,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784790960}
   m_CullTransparentMesh: 1
+--- !u!1 &1823100495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1823100496}
+  - component: {fileID: 1823100497}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1823100496
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823100495}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 492555159}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1823100497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823100495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba5e3cbf1ea51dc4785cf614ae0f8917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreRight_txt: {fileID: 1784790962}
+  scoreLeft_txt: {fileID: 1898893204}
+  paddle1: {fileID: 800270474}
+  paddle2: {fileID: 425099570}
+  ball: {fileID: 692748165}
 --- !u!1 &1841050942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1960,6 +2115,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 461534245}
+  - {fileID: 492555159}
   - {fileID: 1082006990}
   - {fileID: 1855221733}
   - {fileID: 462674620}

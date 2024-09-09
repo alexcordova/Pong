@@ -6,12 +6,19 @@ public class Ball : MonoBehaviour
 {
     [SerializeField] private float initialVelocity = 4f;
     [SerializeField] private float velocityMultiplier = 1.1f;
+    [SerializeField] private GameObject goalRight;
+    [SerializeField] private Animator goalRight_Anim;
+    [SerializeField] private GameObject goalLeft;
+    [SerializeField] private Animator goalLeft_Anim;
+
     private Rigidbody2D ballRB;
 
     void Start()
     {
         ballRB = GetComponent<Rigidbody2D>();
         Launch();
+        goalRight_Anim = goalRight.GetComponent<Animator>();
+        goalLeft_Anim = goalLeft.GetComponent<Animator>();
     }
 
     private void Launch()
@@ -28,10 +35,22 @@ public class Ball : MonoBehaviour
             ballRB.velocity *= velocityMultiplier;
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.CompareTag("GoalRight"))
+        {
+            goalRight_Anim.SetBool("Goal", true);
+            GameManager.Instance.ScoredLeft();
+            GameManager.Instance.Restart();
+            Launch();
+        }
+        else
+        {
+            goalLeft_Anim.SetBool("Goal", true);
+            GameManager.Instance.ScoredRight();
+            GameManager.Instance.Restart();
+            Launch();
+        }
     }
 }

@@ -41,4 +41,9 @@ public class GameManager : MonoBehaviour
         ball.position = new Vector2(0, 0);
     }
 
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
+
 }
